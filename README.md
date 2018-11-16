@@ -1,2 +1,2 @@
-# Number-Geussing
+# Number-Guessing
 Code along Brad Traversy's JS course
