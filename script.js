@@ -66,7 +66,7 @@ guessBtn.addEventListener('click', function () {
   //Validate the input
   if (isNaN(guess) || guess < min || guess > max) {
 
-    setMessage(`Please Enter a Number Between ${min} and ${max}`, 'red');
+    setMessage(`Please Enter a Number Between minimum and maximum`, 'red');
     guessInput.style.borderColor = 'red';
     message.style.backgroundColor = 'rgb(252,166,166)';
 
