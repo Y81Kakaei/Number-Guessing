@@ -1,8 +1,9 @@
 //Game values
 
-let min = 3,
-  max = 30,
-  winningNum = getRandomNumber(min, max),
+let min,
+  max,
+  randomNumber,
+  winningNum,
   guessesLeft = 3;
 
 
@@ -13,12 +14,26 @@ const game = document.querySelector('#game'),
   maxNum = document.querySelector('.max-num'),
   guessBtn = document.querySelector('#guess-btn'),
   guessInput = document.querySelector('#guess-input'),
-  message = document.querySelector('.message');
+  message = document.querySelector('.message'),
+  ///Extra buttons
+  minInput = document.querySelector('#min-input'),
+  maxInput = document.querySelector('#max-input'),
+  minMaxBtn = document.querySelector('#minMax-btn');
+
+//Setting max and min event listener
+minMaxBtn.addEventListener('click', function () {
+  min = parseInt(minInput.value);
+  max = parseInt(maxInput.value);
+  minNum.textContent = min;
+  maxNum.textContent = max;
 
 
-//assign UI min and max
-minNum.textContent = min;
-maxNum.textContent = max;
+  //Setting the winning number
+  winningNum = Math.floor(Math.random() * (max - min - 1) + min);
+  console.log(winningNum);
+
+})
+
 
 //Play again event listener
 game.addEventListener('mousedown', function (e) {
@@ -41,9 +56,9 @@ guessBtn.addEventListener('click', function () {
     message.style.backgroundColor = 'rgb(252,166,166)';
 
   } else if (guess === winningNum) {
-    //Game ove - won
+    //Game over - won
 
-    gameOver(true, `${winningNum} is correct. YOU WIN!`)
+    gameOver(true, `${winningNum} is correct. YOU WON!`)
 
     message.style.backgroundColor = 'rgb(176,224,230)';
 
@@ -96,13 +111,6 @@ function gameOver(won, msg) {
   guessBtn.className += 'play-again';
 }
 
-
-//Get winning number
-function getRandomNumber(min, max) {
-  let randomNumber = Math.floor(Math.random() * (max - min - 1) + min);
-  console.log(randomNumber);
-  return randomNumber;
-}
 
 //Set message
 function setMessage(msg, color) {
