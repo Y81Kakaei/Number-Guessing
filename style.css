@@ -14,3 +14,11 @@ input {
   background-color: rgb(240, 248, 255);
 
 }
+
+.message {
+  width: 50%;
+  height: 5vw;
+  border-radius: 15px;
+  margin: 0 auto;
+  text-align: center;
+}
