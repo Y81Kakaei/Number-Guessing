@@ -34,6 +34,7 @@ guessBtn.addEventListener('click', function () {
 
   //Check if won
   if (guess === winningNum) {
+    //Game ove - won
     //Disable the input
     guessInput.disabled = true;
     //Change border color
@@ -43,6 +44,9 @@ guessBtn.addEventListener('click', function () {
     setMessage(`${winningNum} is correct`, 'green');
 
   } else {
+
+
+
 
   }
 });
