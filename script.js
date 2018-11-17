@@ -1,7 +1,7 @@
 //Game values
 
-let min = 1,
-  max = 10,
+let min = 3,
+  max = 30,
   winningNum = getRandomNumber(min, max),
   guessesLeft = 3;
 

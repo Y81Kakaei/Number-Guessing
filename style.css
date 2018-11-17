@@ -4,6 +4,7 @@
   height: 30vw;
   background-color: rgba(220, 220, 220, 0.9);
   box-shadow: 10px 10px 10px black;
+  margin-top: 10vw;
 }
 
 input {
@@ -15,6 +16,11 @@ input {
 
 }
 
+#minMax-btn:hover {
+  background-color: rgb(240, 248, 255);
+
+}
+
 .message {
   width: 50%;
   height: 5vw;
@@ -22,4 +28,9 @@ input {
   margin: 0 auto;
   text-align: center;
   padding-top: 27px;
+}
+
+#min-input,
+#max-input {
+  width: 8vw;
 }
