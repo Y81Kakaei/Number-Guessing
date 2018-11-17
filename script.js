@@ -18,19 +18,34 @@ const game = document.querySelector('#game'),
   ///Extra buttons
   minInput = document.querySelector('#min-input'),
   maxInput = document.querySelector('#max-input'),
-  minMaxBtn = document.querySelector('#minMax-btn');
+  minMaxBtn = document.querySelector('#minMax-btn'),
+  minMaxMessage = document.querySelector('.minMaxMessage');
 
 //Setting max and min event listener
 minMaxBtn.addEventListener('click', function () {
-  min = parseInt(minInput.value);
-  max = parseInt(maxInput.value);
-  minNum.textContent = min;
-  maxNum.textContent = max;
+  //Validate the input
+  if (minInput.value == '' || maxInput.value == '') {
+
+    minMaxMessage.textContent = 'Please Enter a Number';
+    minMaxMessage.style.borderColor = 'red';
+    minMaxMessage.style.color = 'red';
+    minMaxMessage.style.backgroundColor = 'rgb(252,166,166)';
+    minMaxMessage.className = 'alert'
+
+  } else {
+    minMaxMessage.remove();
+    min = parseInt(minInput.value);
+    max = parseInt(maxInput.value);
+    minNum.textContent = min;
+    maxNum.textContent = max;
 
 
-  //Setting the winning number
-  winningNum = Math.floor(Math.random() * (max - min - 1) + min);
-  console.log(winningNum);
+    //Setting the winning number
+    winningNum = Math.floor(Math.random() * (max - min - 1) + min);
+    console.log(winningNum);
+
+
+  }
 
 })
 

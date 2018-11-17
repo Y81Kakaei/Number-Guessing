@@ -24,11 +24,20 @@ input {
 
 .message {
   width: 50%;
-  height: 5vw;
+  height: 3vw;
   border-radius: 15px;
   margin: 0 auto;
   text-align: center;
   padding-top: 27px;
+}
+
+.alert {
+  width: 50%;
+  height: 3vw;
+  border-radius: 15px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 20px;
 }
 
 #min-input,
